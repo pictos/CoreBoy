@@ -3,17 +3,16 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <LangVersion>8.0</LangVersion>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RootNamespace>CoreBoy</RootNamespace>
     <AssemblyName>CoreBoy</AssemblyName>
-    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.7.82" />
-    <PackageReference Include="NAudio" Version="1.10.0" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.8" />
   </ItemGroup>
 
 </Project>

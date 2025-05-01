@@ -1,0 +1,4 @@
+{
+    "dotnet.preferCSharpExtension": true,
+    "dotnet.defaultSolution": "CoreBoy.Maui/CoreBoy.Maui.sln"
+}
