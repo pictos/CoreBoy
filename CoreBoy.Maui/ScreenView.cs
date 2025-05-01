@@ -34,7 +34,7 @@ sealed partial class ScreenView : SKCanvasView, IDisplay
 	{
 		var pixel = currentPixel++;
 		var x = pixel % DisplayWidth;
-		var y = pixel / DisplayWidth - 1;
+		var y = pixel / DisplayWidth;
 
 		bitmap.SetPixel(x, y, Colors[color]);
 
@@ -50,11 +50,18 @@ sealed partial class ScreenView : SKCanvasView, IDisplay
 		var pixel = currentPixel++;
 		var x = pixel % DisplayWidth;
 		var y = pixel / DisplayWidth;
-		y += 1;
-		bitmap.SetPixel(x, y,
-			new SKColor((byte)r, (byte)g, (byte)b));
 
-		currentPixel %= DisplayLength;
+		if (y >= 0 && y < DisplayHeight)
+		{
+			bitmap.SetPixel(x, y, new SKColor((byte)r, (byte)g, (byte)b));
+		}
+		else
+		{
+			_ = 1;
+		}
+			//bitmap.SetPixel(x, y, new SKColor((byte)r, (byte)g, (byte)b));
+
+			currentPixel %= DisplayLength;
 	}
 
 	protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
@@ -72,7 +79,7 @@ sealed partial class ScreenView : SKCanvasView, IDisplay
 
 	public void RequestRefresh()
 	{
-		InvalidateSurface();
+		MainThread.BeginInvokeOnMainThread(InvalidateSurface);
 	}
 
 	public void WaitForRefresh()

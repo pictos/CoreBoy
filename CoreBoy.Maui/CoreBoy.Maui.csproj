@@ -18,6 +18,7 @@
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>preview</LangVersion>
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
@@ -57,6 +58,14 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Mario.gbc" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Mario.gbc" />
 	</ItemGroup>
 
 	<ItemGroup>
