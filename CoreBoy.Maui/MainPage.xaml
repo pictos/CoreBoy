@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="CoreBoy.Maui.MainPage"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:CoreBoy.Maui">
+	<Grid
+		Padding="10"
+		ColumnDefinitions="*, *"
+		RowDefinitions="400, *">
+
+		<local:ScreenView Grid.ColumnSpan="2" BackgroundColor="Fuchsia" />
+
+		<Grid
+			Grid.Row="1"
+			ColumnDefinitions="auto, auto, auto"
+			RowDefinitions="auto, auto, auto" />
+
+		<Button Grid.Column="1" Text="Up" />
+		<Button
+			Grid.Row="1"
+			Grid.Column="2"
+			Text="Right" />
+		<Button
+			Grid.Row="2"
+			Grid.Column="1"
+			Text="Down" />
+		<Button Grid.Row="1" Text="Left" />
+
+	</Grid>
+
+</ContentPage>
