@@ -14,7 +14,7 @@ This-
 
 # Pre-Reqs
 
-* .NET Core 3.1
+* .NET 9
 
 # Usage
 
