@@ -32,6 +32,7 @@ namespace CoreBoy.gui
 		{
 
 		}
+
         public void Run()
         {
             Stop ();
@@ -63,7 +64,11 @@ namespace CoreBoy.gui
                 Priority = ThreadPriority.AboveNormal
             });
 
-            _runnables.ForEach(t => t.Start());
+            foreach(var runner in _runnables)
+            {
+                runner.Start();
+            }
+
             Active = true;
         }
 
